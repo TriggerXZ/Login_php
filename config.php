@@ -4,9 +4,9 @@ $user= 'root';
 $password='';
 $data_base='street_market';
 
-$conexion= mysqli_connect($server,$user,$password,$data_base);
+$conn= mysqli_connect($server,$user,$password,$data_base);
 
-if (!$conexion) {
+if (!$conn) {
     die("Conexion fallida");
 }
 ?>

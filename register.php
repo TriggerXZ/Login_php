@@ -1,22 +1,28 @@
 <?php
-    require "config.php";
+require "config.php";
 
-    $message = '';
+$message = '';
 
-    if (!empty($_POST['email']) && !empty($_POST['password'])) {
-      $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
-      $stmt = $conn->prepare($sql);
-      $stmt->bindParam(':email', $_POST['email']);
-      $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-      $stmt->bindParam(':password', $password);
-  
-      if ($stmt->execute()) {
-        $message = 'Successfully created new user';
-      } else {
-        $message = 'Sorry there must have been an issue creating your account';
-      }
+if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    if ($password === $cpassword) {
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "INSERT INTO trabajadores (tra_nom, tra_con, tra_cor) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('sss', $username, $hashed_password, $email);
+
+        if ($stmt->execute()) {
+            $message = 'Se ha creado el usuario correctamente';
+        } else {
+            $message = 'Lo siento, ha ocurrido un problema al crear la cuenta';
+        }
+    } else {
+        $message = 'Las contraseñas no coinciden';
     }
-  ?>
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,20 +32,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Registro</title>
 </head>
 <body>
-<div class="contenedor__todo">
-    <div class="contenedor__login-register">
-        <form action="" method="POST" class="login">
-            <h2>Registro</h2>
+    <?php if(!empty($message)): ?>
+    <p><?= $message ?></p>
+    <?php endif; ?>
+    <div class="contenedor__todo">
+        <div class="contenedor__login-register">
+            <form action="" method="POST" class="register">
+                <h2>Registro</h2>
                 <input type="text" name="username" placeholder="Nombre de usuario" value="" required>
                 <input type="email" name="email" placeholder="Correo Electronico" value="" required>
                 <input type="password" name="password" placeholder="Ingrese su contraseña" value="" required>
                 <input type="password" name="cpassword" placeholder="Repita su contraseña" value="" required>
                 <button type="submit" value="send">Registrate</button>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 </body>
 </html>
