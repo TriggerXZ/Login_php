@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background-color: #263238;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor__todo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #4f5b627a;
+    border-radius: 10px;
+}
+
+.caja div{
+    margin: 100px 40px;
+    color: aliceblue;
+    transition: all 400ms;
+}
+
+.caja div p, 
+.caja div button{
+    margin-top: 30px;
+}
+
+.caja div h3{
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.caja button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: rgb(248, 213, 149);
+    transition: all 300ms;
+}
+
+.caja button:hover{
+    background: #fff;
+}
+
+a{
+    color: wheat;
+}
+
+/*Formularios*/
+.contenedor__login-register {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: 240px;
+    left: 200px;
+}
+
+
+.contenedor__login-register form{
+    width: 100%;
+    padding: 70px 20px;
+    background: #fff;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-top: -30px;
+    color: rgb(255, 225, 169);
+}
+
+.contenedor__login-register form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: #f2f2f2;
+    border-radius: 8px;
+}
+
+.contenedor__login-register form button{
+    margin-top: 40px;
+    padding: 10px 40px;
+    font-size: 15px;
+    background: transparent;
+    border: 2px solid #263238;
+    cursor: pointer;
+    color: rgb(248, 214, 151);
+    margin-bottom: -10px;
+    margin-left: 90px;
+    border-radius: 8px;
+    transition: all 300ms;
+}
+
+.contenedor__login-register form button:hover{
+    background: #263238;
+}
