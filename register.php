@@ -27,6 +27,7 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,21 +35,27 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
     <link rel="stylesheet" href="style.css">
     <title>Registro</title>
 </head>
+
 <body>
-    <?php if(!empty($message)): ?>
-    <p><?= $message ?></p>
-    <?php endif; ?>
+
     <div class="contenedor__todo">
         <div class="contenedor__login-register">
             <form action="" method="POST" class="register">
                 <h2>Registro</h2>
+                <?php if (!empty($message)): ?>
+                    <p>
+                        <?= $message ?>
+                    </p>
+                <?php endif; ?>
                 <input type="text" name="username" placeholder="Nombre de usuario" value="" required>
                 <input type="email" name="email" placeholder="Correo Electronico" value="" required>
                 <input type="password" name="password" placeholder="Ingrese su contraseña" value="" required>
                 <input type="password" name="cpassword" placeholder="Repita su contraseña" value="" required>
                 <button type="submit" value="send">Registrate</button>
+                <p class="mensaje"><a href="login.php">Login</a></p>
             </form>
         </div>
     </div>
 </body>
+
 </html>

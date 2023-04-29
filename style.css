@@ -64,7 +64,8 @@ main{
 }
 
 a{
-    color: wheat;
+    color: black;
+    
 }
 
 /*Formularios*/
@@ -100,7 +101,7 @@ a{
     padding: 10px;
     outline: none;
     border: none;
-    background: #f2f2f2;
+    background: #f2f2f2e8;
     border-radius: 8px;
 }
 
@@ -108,7 +109,7 @@ a{
     margin-top: 40px;
     padding: 10px 40px;
     font-size: 15px;
-    background: transparent;
+    background: #263238;
     border: 2px solid #263238;
     cursor: pointer;
     color: rgb(248, 214, 151);
@@ -119,5 +120,11 @@ a{
 }
 
 .contenedor__login-register form button:hover{
-    background: #263238;
+    background: black;
 }
+
+.contenedor__login-register .mensaje{
+    text-align: center;
+    margin-left: 50%;
+    font-size: 50px;
+  }
