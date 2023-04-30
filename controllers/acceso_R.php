@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "../config.php";
 
 
 if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
@@ -14,14 +14,15 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
         $stmt->bind_param('sss', $username, $hashed_password, $email);
 
         if ($stmt->execute()) {
-            echo  '<p class="alert alert-danger">Se ha creado el usuario correctamente</p>';
-            header("location:bienvenido.php");
+            # header("location:bienvenido.php");
+            echo '<p class="alert alert-danger">Se ha creado el usuario correctamente</p>';
+
         } else {
             echo 'Lo siento, ha ocurrido un problema al crear la cuenta';
         }
     } else {
-        echo '<p class="alert alert-danger">Las contraseñas no coinciden</p>', $username;
-        
+        echo '<p class="alert alert-danger">Las contraseñas no coinciden</p>';
+
     }
 }
 ?>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Login</title>
 </head>
 
@@ -15,11 +15,12 @@
     <div class="contenedor__todo">
         <div class="contenedor__login-register">
             <!--Login-->
-            <form action="" class="formulario__login">
-                <h2>Iniciar Sesion</h2>
-                <input type="text" placeholder="Correo Electronico">
-                <input type="password" placeholder="Contraseña">
-                <button type="submit">Entrar</button>
+            <form action="" method="POST" class="formulario__login">
+                <h2>Iniciar Sesión</h2>
+                <?php require "../controllers/acceso_L.php"; ?>
+                <input type="email" name="email" placeholder="Correo Electrónico" value="">
+                <input type="password" name="password" placeholder="Contraseña" value="">
+                <button type="submit" value="send" style="background-color: #263238;">Entrar</button>
             </form>
         </div>
     </div>
