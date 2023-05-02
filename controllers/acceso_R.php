@@ -15,7 +15,7 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
 
         if ($stmt->execute()) {
             # header("location:bienvenido.php");
-            echo '<p class="alert alert-danger">Se ha creado el usuario correctamente</p>';
+            echo '<p class="alert alert-success">Se ha creado el usuario correctamente</p>';
 
         } else {
             echo 'Lo siento, ha ocurrido un problema al crear la cuenta';
