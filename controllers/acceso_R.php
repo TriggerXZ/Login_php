@@ -14,13 +14,13 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
         $stmt->bind_param('sss', $username, $hashed_password, $email);
 
         if ($stmt->execute()) {
-            echo '<p class="alert alert-success">Se ha creado el usuario correctamente</p>';
+            echo '<p class="alert alert-success text-center">Se ha creado el usuario correctamente</p>';
 
         } else {
-            echo 'Lo siento, ha ocurrido un problema al crear la cuenta';
+            echo '<p class="alert alert-success text-center">Lo siento a habido un problema al crear la cuenta</p>';
         }
     } else {
-        echo '<p class="alert alert-danger">Las contraseñas no coinciden</p>';
+        echo '<p class="alert alert-danger text-center">Las contraseñas no coinciden</p>';
 
     }
 }
