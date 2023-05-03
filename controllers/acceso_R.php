@@ -14,7 +14,6 @@ if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass
         $stmt->bind_param('sss', $username, $hashed_password, $email);
 
         if ($stmt->execute()) {
-            # header("location:bienvenido.php");
             echo '<p class="alert alert-success">Se ha creado el usuario correctamente</p>';
 
         } else {
