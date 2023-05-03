@@ -17,7 +17,7 @@
   </header>
   <main>
     <div class="contenedor__todo">
-      <div class="caja">
+      <div class="caja text-center">
         <div>
           <h3>¿Ya tienes una cuenta?</h3>
           <p>Inicia sesion para entrar en la pagina</p>
