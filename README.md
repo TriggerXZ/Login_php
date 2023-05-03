@@ -1,3 +1,3 @@
 # Login_php
 
-Registro y login con php y xampp
+Registro-login con php y xampp
