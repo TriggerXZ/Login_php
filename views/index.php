@@ -8,13 +8,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../styles/style.css">
-  <title>Login</title>
+  <title>Street Market</title>
 </head>
 
 <body>
+  <header >
+  <h1 class=text-center style="color: white; margin-top:10px;">Street Marker</h1>
+  </header>
   <main>
     <div class="contenedor__todo">
-      <div class="caja">
+      <div class="caja text-center">
         <div>
           <h3>¿Ya tienes una cuenta?</h3>
           <p>Inicia sesion para entrar en la pagina</p>

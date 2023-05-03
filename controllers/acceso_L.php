@@ -14,7 +14,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         if (password_verify($password, $hash)) {
             header("location:../views/bienvenido.php");
         } else {
-            header("location:../views/bienvenido.php");
+            echo '<p class="alert alert-danger">La contraseña es incorrecta</p>';
         }
     } else {
         echo '<p class="alert alert-danger">Acceso denegado</p>';

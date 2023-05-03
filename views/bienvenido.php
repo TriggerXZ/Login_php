@@ -16,11 +16,6 @@ require '../controllers/acceso_R.php';
 
 <body>
     <h2>Bienvenido a mi pagina web</h2>
-    <?php if (!empty($username)): ?>
-        <p>
-            <?= $username ?>
-        </p>
-    <?php endif; ?>
 </body>
 
 </html>
