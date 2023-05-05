@@ -12,7 +12,12 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $row = $result->fetch_assoc();
         $hash = $row['tra_con'];
         if (password_verify($password, $hash)) {
-            header("location:../views/bienvenido.php");
+            if($row['admin']==1){
+                header("location:../views/admin.php");
+            } else{
+                header("location:../views/bienvenido.php");
+            }
+            
         } else {
             echo '<p class="alert alert-danger">La contraseña es incorrecta</p>';
         }
@@ -22,4 +27,3 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 } else {
     echo '<p class="alert alert-danger">Los campos están vacíos</p>';
 }
-?>
